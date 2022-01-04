@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    珍珠之歌
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="debian" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">此刻进发</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于">
+		                关于
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/Tritium404" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1641149747386-09ffbbc17be8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=987&amp;q=80);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >SSH的配置</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="SSH的配置"><a href="#SSH的配置" class="headerlink" title="SSH的配置"></a>SSH的配置</h1><h2 id="安装ssh"><a href="#安装ssh" class="headerlink" title="安装ssh"></a>安装ssh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get update  <span class="comment">#更新软件源</span></span><br><span class="line"><span class="variable">$sudo</span> apt-get install ssh <span class="comment">#安装</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>OpenSSH（即常说的ssh）的常用配置文件有 <code>ssh_config</code> 和 <code>sshd_config</code> 。其中 <code>ssh_config</code> 为客户端配置文件，设置与客户端相关的应用可通过此文件实现；<code>sshd_config</code>为服务器配置文件，设置与服务器相关的应用可通过此文件实现。</p>
+<p>一般来说我们常用的都是 <code>sshd_config</code> 配置文件，在 <code>sshd_config</code> 配置文件中，以“# ”（#加空格）开头的是注释信息；以“#”开头的是默认配置信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">port 22</span><br></pre></td></tr></table></figure>
+
+<p>设置 sshd 监听端口号，默认情况下为 22，可以设置多个监听端口号，即重复使用Prot这个设置项。修改后记得重启 sshd ，以及在防火墙中添加端口。出于安全考虑，端口指定为小于等于 65535，并且非 22 或 22 变种的值。</p>
+<h3 id="监听地址"><a href="#监听地址" class="headerlink" title="监听地址"></a>监听地址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ListenAddress 0.0.0.0 //监视所有IPV4地址</span><br><span class="line">ListenAddress :: //可以自行设置，默认仅使用IPV4</span><br></pre></td></tr></table></figure>
+
+<p>设置 sshd 监听（绑定）的IP地址，<code>0.0.0.0</code> 表示监听所有IPv4的地址。出于安全考虑，设置为指定IP地址，而非所有地址。<code>:: </code>是IPv6的地址不需要改。</p>
+<h3 id="协议版本"><a href="#协议版本" class="headerlink" title="协议版本"></a>协议版本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Protocol 2</span><br></pre></td></tr></table></figure>
+
+<p>有部分 <code>sshd_config </code>配置文件会有此选项。这个选项设置的是 ssh 协议版本，可以是 1 也可以是 2。出于安全考虑，设置为最新协议版本。</p>
+<h3 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HostKey /etc/ssh/ssh_host_rsa_key //rsa密钥</span><br><span class="line">HostKey /etc/ssh/ssh_host_dsa_key //dsa密钥</span><br><span class="line">HostKey /etc/ssh/ssh_host_ecdsa_key //ecdsa密钥</span><br><span class="line">HostKey /etc/ssh/ssh_host_ed25519_key //ed25519密钥</span><br></pre></td></tr></table></figure>
+
+<p>对应了四种不同加密类型的密钥，按照个人需求，启用以后记得将密钥放入对应的文件夹内，同时客户端也需要导入密钥才能连接。</p>
+<h3 id="登录日志"><a href="#登录日志" class="headerlink" title="登录日志"></a>登录日志</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SyslogFacility AUTH</span><br><span class="line">SyslogFacility AUTHPRIV</span><br></pre></td></tr></table></figure>
+
+<p>当有人使用 ssh 登录系统时，ssh 会记录信息，记录类型为 <code>AUTHPRIV</code>，sshd 服务日志存放在 <code>/var/log/secure</code>。</p>
+<h3 id="sshd服务日志"><a href="#sshd服务日志" class="headerlink" title="sshd服务日志"></a>sshd服务日志</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LogLevel INFO</span><br></pre></td></tr></table></figure>
+
+<p>设置记录 sshd 日志信息的级别。</p>
+<h3 id="连接超时"><a href="#连接超时" class="headerlink" title="连接超时"></a>连接超时</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LoginGraceTime 2m</span><br></pre></td></tr></table></figure>
+
+<p>不带单位就默认算作秒，超时了 ssh 连接强制下线。</p>
+<h3 id="允许Root用户登录"><a href="#允许Root用户登录" class="headerlink" title="允许Root用户登录"></a>允许Root用户登录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes</span><br></pre></td></tr></table></figure>
+
+<p>开启了不安全，不过我就是喜欢 root 登录。</p>
+<h3 id="密码验证"><a href="#密码验证" class="headerlink" title="密码验证"></a>密码验证</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
+
+<p>　是否使用密码验证。当然也可以设置为 no，不使用密码验证，转而使用密钥登录。</p>
+<h3 id="空密码登录"><a href="#空密码登录" class="headerlink" title="空密码登录"></a>空密码登录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitEmptyPasswords no</span><br></pre></td></tr></table></figure>
+
+<p>是否允许空密码的用户登录，默认为 no，不允许。</p>
+<h3 id="登陆提示"><a href="#登陆提示" class="headerlink" title="登陆提示"></a>登陆提示</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PrintMotd yes</span><br></pre></td></tr></table></figure>
+
+<p>打印登录提示信息，提示信息存储在 <code>/etc/moed</code> 文件中。</p>
+<h3 id="上次登录信息"><a href="#上次登录信息" class="headerlink" title="上次登录信息"></a>上次登录信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PrintLastLog yes</span><br></pre></td></tr></table></figure>
+
+<p>显示上次登录信息。默认为 yes。</p>
+<h3 id="反向解析"><a href="#反向解析" class="headerlink" title="反向解析"></a>反向解析</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UseDNS yes</span><br></pre></td></tr></table></figure>
+
+<p>禁止DNS反向解析,默认是 yes，一般会注释。</p>
+<h3 id="PAM认证"><a href="#PAM认证" class="headerlink" title="PAM认证"></a>PAM认证</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UsePAM yes</span><br></pre></td></tr></table></figure>
+
+<p>是否启用PAM插件式认证模块，默认为 yes。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://tritium404.club/2022/01/05/SSH%E7%9A%84%E9%85%8D%E7%BD%AE/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://tritium404.club/2022/01/05/SSH%E7%9A%84%E9%85%8D%E7%BD%AE/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

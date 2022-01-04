@@ -1,0 +1,633 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    珍珠之歌
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="debian" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">此刻进发</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于">
+		                关于
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/Tritium404" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1641232437256-06a51ee25b18?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >SSH的配置</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Vim的运用"><a href="#Vim的运用" class="headerlink" title="Vim的运用"></a>Vim的运用</h1><h2 id="Vi-简介"><a href="#Vi-简介" class="headerlink" title="Vi 简介"></a>Vi 简介</h2><p>Vi 是 Unix 世界里极为普遍的全萤幕文书编辑器，几乎可以说任何一台Unix 机器都会提供这套软体。Linux 当然也有，它的 vi 其实是 elvis（版权问题），不过它们都 差不多。熟悉 DOS 下的文书处理後，也许会感到 vi 并不好用；Unix 上也已经发展出许多更新、更好用的文书编辑器，但是并不一定每一台 Unix 机器上都会安装这些额外的软体。所以，学习 vi 的基本操作还是有好处，让你在各个不同的机器上得心应手。 </p>
+<h2 id="Vi-基本观念"><a href="#Vi-基本观念" class="headerlink" title="Vi 基本观念"></a>Vi 基本观念</h2><p>Unix 提供一系列的 ex 编辑器，包括 ex, edit 和 vi 。相对於全萤幕编辑器，现在 可能很难想像如何使用 ex, edit 这种行列编辑器（有人用过DOS 3.3 版以前所附的 EDLIN 吗？）。 Vi 的原意是 “Visual”，它是一个立即反应的编辑程式，也就是说可 以立刻看到操作结果。 </p>
+<p>也由於 vi 是全萤幕编辑器，所以它必须控制整个终端机萤幕哪里该显示些什麽。而终 端机的种类有许多种，特性又不尽相同，所以 vi 有必要知道现在所使用的是哪一种终 端机。这是藉由 TERM 这个环境变数来设定，设定环境变数方面请查看所使用 shell 的说明。（除非执行 vi 的时候回应unknow terminal type ，否则可以不用设定。） </p>
+<p>只要简单的执行 vi 就可以进入 vi 的编辑环境。在实际操作之前先对它有个概略的了 解会比较好。Vi 有两种模式，输入模式以及指令模式。输入模式即是用来输入文字资 料，而指令模式则是用来下达一些编排文件、存档、以及离开 vi 等等的操作指令。当 执行 vi 後，会先进入指令模式，此时输入的任何字元都视为指令。 </p>
+<h2 id="进入与离开"><a href="#进入与离开" class="headerlink" title="进入与离开"></a>进入与离开</h2><p>要进入 vi 可以直接在系统提示字元下键入 vi ＜档案名称＞，vi 可以自动帮你载入 所要编辑的档案或是开启一个新档。进入 vi 後萤幕左方会出现波浪符号，凡是列首有 该符号就代表此列目前是空的。要离开 vi 可以在指令模式下键入 :q, :wq 指令则是 存档後再离开（注意冒号）。要切换到指令模式下则是用 [ESC] 键，如果不晓得现在 是处於什麽模式， 可以多按几次 [ESC]，系统会发出哔哔声以确定进入指令模式。 </p>
+<h2 id="Vi-输入模式"><a href="#Vi-输入模式" class="headerlink" title="Vi 输入模式"></a>Vi 输入模式</h2><p>要如何输入资料呢？有好几个指令可以进入输入模式： </p>
+<p><strong>新增 (append)</strong> </p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>从游标所在位置後面开始新增资料，游标後的资料随新增资料向後移动</td>
+</tr>
+<tr>
+<td>A</td>
+<td>从游标所在列最後面的地方开始新增资料</td>
+</tr>
+</tbody></table>
+<p><strong>插入 (insert)</strong> </p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i</td>
+<td>从游标所在位置前面开始插入资料，游标後的资料随新增资料向後移动</td>
+</tr>
+<tr>
+<td>I</td>
+<td>从游标所在列的第一个非空白字元前面开始插入资料</td>
+</tr>
+</tbody></table>
+<p><strong>开始 (open)</strong> </p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>o</td>
+<td>在游标所在列下新增一列并进入输入模式</td>
+</tr>
+<tr>
+<td>O</td>
+<td>在游标所在列上方新增一列并进入输入模式</td>
+</tr>
+</tbody></table>
+<h2 id="Vi-基本编辑"><a href="#Vi-基本编辑" class="headerlink" title="Vi 基本编辑"></a>Vi 基本编辑</h2><p>配合一般键盘上的功能键，像是方向键、[Insert] 、[Delete] 等等，现在你应该已经 可以利用 vi 来处理文字资料了。当然 vi 还提供其他许许多多能让文字的处理更形 方便，有兴趣的看倌请继续。 </p>
+<p>在继续下去之前先来点 BCC 吧。电脑有许多厂牌，不同的硬体及作业系统。PC 也不是 仅仅只有 IBM PC 及其相容品而已。事实上，包括键盘，终端机等等往往都有不同的规格。这代表什麽？ </p>
+<p>在文书编辑软体上会遇这样的问题，某些电脑的键盘上没有特定的几个功能键！那麽不 就有某些功能不能用了？这个问题在 Unix 系统上也一样，几乎各大电脑厂商都有自己 的 Unix 系统，而 vi 的操作方法也会随之有点出入。我们固然可以用 PC 的键盘来说明 vi 的操作，但是还是得提一下这个问题。 </p>
+<h3 id="删除与修改"><a href="#删除与修改" class="headerlink" title="删除与修改"></a>删除与修改</h3><p>何谓编辑？在这里我们认为是文字的新增修改以及删除，甚至包括文字区块的搬移、复 制等等。这里先介绍 vi 的如何做删除与修改。（注意：在 vi 的原始观念里，输入跟编辑是两码子事。编辑是在指令模式下操作的，先利用指令移动游标来定位要进行编辑 的地方，然後才下指令做编辑。） </p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x</td>
+<td>删除游标所在字元</td>
+</tr>
+<tr>
+<td>d</td>
+<td>删除游标所在的列</td>
+</tr>
+<tr>
+<td>r</td>
+<td>修改游标所在字元，r 後接著要修正的字元</td>
+</tr>
+<tr>
+<td>R</td>
+<td>进入取代状态，新增资料会覆盖原先资料，直到按 [ESC] 回到指令模式下为止</td>
+</tr>
+<tr>
+<td>s</td>
+<td>删除游标所在字元，并进入输入模式</td>
+</tr>
+<tr>
+<td>S</td>
+<td>删除游标所在的列，并进入输入模式</td>
+</tr>
+</tbody></table>
+<p>其实呢，在 PC 上根本没有这麽麻烦！输入跟编辑都可以在输入模式下完成。例如要删 除字元，直接按 [Delete] 不就得了。而插入状态与取代状态可以直接用 [Insert] 切 换，犯不著用什麽指令模式的编辑指令。不过就如前面所提到的，这些指令几乎是每台 终端机都能用，而不是仅仅在 PC 上。 </p>
+<p>在指令模式下移动游标的基本指令是 h, j, k, l 。想来各位现在也应该能猜到只要直 接用 PC 的方向键就可以了，而且无论在指令模式或输入模式下都可以。多容易不是。 </p>
+<p>当然 PC 键盘也有不足之处。有个很好用的指令 u 可以恢复被删除的资料，而 U 指令 则可以恢复游标所在列的所有改变。这与某些电脑上的 [Undo] 按键功能相同。 </p>
+<h2 id="Vi-进阶应用"><a href="#Vi-进阶应用" class="headerlink" title="Vi 进阶应用"></a>Vi 进阶应用</h2><p>相信现在对於 vi 应该已经有相当的认识。处理文字也不会有什麽麻烦才对。如果有兴 趣善用 vi 的其它功能进一步简化操作过程，不妨继续看下去。 </p>
+<h3 id="移动游标"><a href="#移动游标" class="headerlink" title="移动游标"></a>移动游标</h3><p>由於许多编辑工作是藉由游标来定位，所以 vi 提供许多移动游标的方式，这个我们列 几张简表来说明（这些当然是指令模式下的指令）： </p>
+<table>
+<thead>
+<tr>
+<th align="left">指令</th>
+<th align="left">说明</th>
+<th align="left">功能键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">移动到游标所在列的最前面</td>
+<td align="left">[Home]</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">移动到游标所在列的最後面</td>
+<td align="left">[End]</td>
+</tr>
+<tr>
+<td align="left">[CTRL][d]</td>
+<td align="left">向下半页</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">[CTRL][f]</td>
+<td align="left">向下一页</td>
+<td align="left">[PageDown]</td>
+</tr>
+<tr>
+<td align="left">[CTRL][u]</td>
+<td align="left">向上半页</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">[CTRL][b]</td>
+<td align="left">向上一页</td>
+<td align="left">[PageUp]</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>H</td>
+<td>移动到视窗的第一列</td>
+</tr>
+<tr>
+<td>M</td>
+<td>移动到视窗的中间列</td>
+</tr>
+<tr>
+<td>L</td>
+<td>移动到视窗的最後列</td>
+</tr>
+<tr>
+<td>b</td>
+<td>移动到下个字的第一个字母</td>
+</tr>
+<tr>
+<td>w</td>
+<td>移动到上个字的第一个字母</td>
+</tr>
+<tr>
+<td>e</td>
+<td>移动到下个字的最後一个字母</td>
+</tr>
+<tr>
+<td>^</td>
+<td>移动到游标所在列的第一个非空白字元</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n-</td>
+<td>减号移动到上一列的第一个非空白字元，前面加上数字可以指定移动到以上 n 列</td>
+</tr>
+<tr>
+<td>n+</td>
+<td>加号移动到下一列的第一个非空白字元，前面加上数字可以指定移动到以下 n 列</td>
+</tr>
+<tr>
+<td>nG</td>
+<td>直接用数字 n 加上大写 G 移动到第 n 列</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fx</td>
+<td>往右移动到 x 字元上</td>
+</tr>
+<tr>
+<td>Fx</td>
+<td>往左移动到 x 字元上</td>
+</tr>
+<tr>
+<td>tx</td>
+<td>往右移动到 x 字元前</td>
+</tr>
+<tr>
+<td>Tx</td>
+<td>往左移动到 x 字元前</td>
+</tr>
+<tr>
+<td>;</td>
+<td>配合 f&amp;t 使用，重复一次</td>
+</tr>
+<tr>
+<td>,</td>
+<td>配合 f&amp;t 使用，反方向重复一次</td>
+</tr>
+<tr>
+<td>/string</td>
+<td>往右移动到有 string 的地方</td>
+</tr>
+<tr>
+<td>?string</td>
+<td>往左移动到有 string 的地方</td>
+</tr>
+<tr>
+<td>n</td>
+<td>配合 /&amp;? 使用，重复一次</td>
+</tr>
+<tr>
+<td>N</td>
+<td>配合 /&amp;? 使用，反方向重复一次</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n(</td>
+<td>左括号移动到句子的最前面，前面加上数字可以指定往前移动 n 个句子</td>
+<td>句子是以! . ? 三种符号来界定</td>
+</tr>
+<tr>
+<td>n)</td>
+<td>右括号移动到下个句子的最前面，右括号移动到下个句子的最前面</td>
+<td></td>
+</tr>
+<tr>
+<td>n{</td>
+<td>左括弧移动到段落的最前面，前面加上数字可以指定往前移动 n 个段落</td>
+<td>段落是以段落间的空白列界定</td>
+</tr>
+<tr>
+<td>n}</td>
+<td>右括弧移动到下个段落的最前面，前面加上数字可以指定往後移动 n 个段落</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>不要尝试背诵这些指令，否则後果自行负责。它们看起来又多又杂乱，事实上这是文字 叙述本身的障碍。再强调一次，实际去使用它只要几次就可以不经大脑直接下达这些奇 奇怪怪的指令，远比死记活背搞得模模糊糊强多了。</p>
+<h2 id="进阶编辑指令"><a href="#进阶编辑指令" class="headerlink" title="进阶编辑指令"></a>进阶编辑指令</h2><p>这些编辑指令非常有弹性，基本上可以说是由指令与范围所构成。例如 dw 是由删除指 令 d 与范围 w 所组成，代表删除一个字 d(elete) w(ord) 。 </p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d</td>
+<td>删除(delete)</td>
+</tr>
+<tr>
+<td>y</td>
+<td>复制(yank)</td>
+</tr>
+<tr>
+<td>p</td>
+<td>放置(put)</td>
+</tr>
+<tr>
+<td>c</td>
+<td>修改(change)</td>
+</tr>
+</tbody></table>
+<p>范围可以是下列几个： </p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>e</td>
+<td>游标所在位置到该字的最後一个字母</td>
+</tr>
+<tr>
+<td>w</td>
+<td>游标所在位置到下个字的第一个字母</td>
+</tr>
+<tr>
+<td>b</td>
+<td>游标所在位置到上个字的第一个字母</td>
+</tr>
+<tr>
+<td>$</td>
+<td>游标所在位置到该列的最後一个字母</td>
+</tr>
+<tr>
+<td>0</td>
+<td>游标所在位置到该列的第一个字母</td>
+</tr>
+<tr>
+<td>)</td>
+<td>游标所在位置到下个句子的第一个字母</td>
+</tr>
+<tr>
+<td>(</td>
+<td>游标所在位置到该句子的第一个字母</td>
+</tr>
+<tr>
+<td>{</td>
+<td>游标所在位置到该段落的最後一个字母</td>
+</tr>
+<tr>
+<td>}</td>
+<td>游标所在位置到该段落的第一个字母</td>
+</tr>
+</tbody></table>
+<p>说实在的，组合这些指令来编辑文件有一点点艺术气息。不管怎麽样，它们提供更多编 辑文字的能力。值得注意的一点是删除与复制都会将指定范围的内容放到暂存区里，然 後就可以用指令 p 贴到其它地方去，这是 vi 用来处理区段拷贝与搬移的办法。 </p>
+<p>某些 vi 版本，例如 Linux 所用的 elvis 可以大幅简化这一坨指令。如果稍微观察一 下这些编辑指令就会发现问题其实是定范围的方式有点杂，实际上只有四个指令罢了。 指令 v 非常好用，只要按下 v 键，游标所在的位置就会反白，然後就可以移动游标来 设定范围，接著再直接下指令进行编辑即可。 </p>
+<p>对於整列操作， vi 另外提供了更方便的编辑指令。前面曾经提到过删除整列文字的指 令 dd 就是其中一个；cc 可以修改整列文字；而 yy 则是复制整列文字；指令 D 则可 以删除游标到该列结束为止所有的文字。 </p>
+<h2 id="档案指令"><a href="#档案指令" class="headerlink" title="档案指令"></a>档案指令</h2><p>档案指令多以 : 开头，跟编辑指令有点区别。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>操作</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:q</td>
+<td>q 结束编辑(quit)</td>
+<td>可以与下条指令组合使用</td>
+</tr>
+<tr>
+<td>:w</td>
+<td>存档(write)</td>
+<td>其後可加所要存档的档名</td>
+</tr>
+<tr>
+<td>zz</td>
+<td>与 :wq 相同</td>
+<td></td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>强制不保存并离开</td>
+<td></td>
+</tr>
+<tr>
+<td>:n,mw filename</td>
+<td>将第 n 列到第 m列 的文字存放的所指定的 filename 里</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Vim-的习惯改进（Centos用户）"><a href="#Vim-的习惯改进（Centos用户）" class="headerlink" title="Vim 的习惯改进（Centos用户）"></a>Vim 的习惯改进（Centos用户）</h2><p>debian下的 vim 与 redhat 系下的 vim 有很多不一样的地方，比如不支持直接删除。</p>
+<p>我们只需要 <code>vi /etc/vim/vimrc.tiny</code>，</p>
+<p>把 <code>set compatible</code> 修改为 <code>set nocompatible</code>，</p>
+<p>加入一句 <code>set backspace=2</code></p>
+<blockquote>
+<p>compatible这个词是“兼容的”这个意思。<br>nocompatible就是不兼容的。具体是不兼容什么，简单点说就是很老的vi的格式。<br>vim是vi的扩展，nocompatible就是指vim在工作的时候不需要考虑和vi兼容。</p>
+<p>vim 是 vi 的最流行的加强版。<br>它在 vi 的基础上增加了很多功能，但就不与 vi 完全兼容了。<br>set compatible 就是让 vim 关闭所有扩展的功能，尽量模拟 vi 的行为。<br>但这样就不应用 vim 的很多强大功能，所以一般没有什么特殊需要的话（比如执行很老的 vi 脚本），都要在 vim 的配置开始，写上 set nocompatible，关闭兼容模式。由于这个选项是最最基础的选项，会连带很多其它选项发生变动（称作副作用），所以它必需是第一个设定的选项。<br>具体设置：一般在/etc/vim中修改set compatible为set nocompatible。</p>
+</blockquote>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://tritium404.club/2022/01/05/Vim%E7%9A%84%E8%BF%90%E7%94%A8/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://tritium404.club/2022/01/05/Vim%E7%9A%84%E8%BF%90%E7%94%A8/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
