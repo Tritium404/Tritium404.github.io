@@ -95,7 +95,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/C-%E8%AF%AD%E8%A8%80/">C 语言</a></li><li><a class="category-link" href="/categories/debian-linux/">debian_linux</a></li><li><a class="category-link" href="/categories/mind/">mind</a>
+	                        <a class="category-link" href="/categories/Debian/">Debian</a></li><li><a class="category-link" href="/categories/NetMgr/">NetMgr</a>
 	                    </ul>
 	        </li>
 	        
@@ -138,13 +138,86 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1553315871-e2fe4a2e1387?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNha3VyYXxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >物哀思想</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1543946602-a0fce8117697?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bmV0d29ya3xlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=80);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >企业网络解决方案</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>物哀是日本江户时代国学大家本居宣长（もとおりのりながMotooriNorinaga）提出的文学理念，也可以说是他的世界观，这个概念简单地说，是“真情流露”。这个主题也在日本著作《源氏物语》中得到了很好的体现。</p>
-<p>杂谈测试页。</p>
+                <h1 id="企业网络解决方案"><a href="#企业网络解决方案" class="headerlink" title="企业网络解决方案"></a>企业网络解决方案</h1><h2 id="拓扑概览"><a href="#拓扑概览" class="headerlink" title="拓扑概览"></a>拓扑概览</h2><p>开门见山，下面是一个双核心的企业网络拓扑：</p>
+<p><img src="/2022/01/07/%E4%BC%81%E4%B8%9A%E7%BD%91%E7%BB%9C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/p0.svg" alt="p0"></p>
+<p>以上图为例，我们大致将主干其分为三层：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>构成</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>核心层</td>
+<td>两台 L3 switcher 构成</td>
+<td>性能强大，对峰值流量由承载能力。</td>
+</tr>
+<tr>
+<td>汇聚层</td>
+<td>四台 L3 switcher 构成</td>
+<td>形成干路，可供实现负载均衡，并提供冗余链路。</td>
+</tr>
+<tr>
+<td>接入层</td>
+<td>工作组，无线等路由</td>
+<td>接入各种终端，为用户接入网络服务。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>逻辑区域</th>
+<th>组成</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>边缘</td>
+<td>两台 router，两堵防火墙</td>
+<td>网络入口。一夫当关，万夫莫开。</td>
+</tr>
+<tr>
+<td>数据中心</td>
+<td>对象存储，磁盘阵列</td>
+<td>存储数据，对安全性，电源有高要求。</td>
+</tr>
+<tr>
+<td>控制与监测系统</td>
+<td>华为 eSight 或其它</td>
+<td>基于 SNMP 的告警监测，集中化控制。</td>
+</tr>
+<tr>
+<td>DMZ</td>
+<td>包含邮件服务器，web 等</td>
+<td>在防火墙之后，提供内网服务的同时提供一部分公网服务。</td>
+</tr>
+<tr>
+<td>广域网</td>
+<td>WAN, Internet</td>
+<td>这里局域网与广域网作相对概念，WAN 可以作分公司内网。Internet 指的是真正的外网。</td>
+</tr>
+</tbody></table>
+<p>三层网络，负载能得到层层分摊，模块化设计使得设备便于管理。</p>
+<h2 id="方案设计要求"><a href="#方案设计要求" class="headerlink" title="方案设计要求"></a>方案设计要求</h2><ul>
+<li><p>确定对方的需求。对方是什么企业？体量如何？需要搭建什么服务？（OA/ERP/CRM等）这些肯定是我们首先了解的。继而我们开始规划大概的逻辑区域，计算性能需求，以及报价符合否。</p>
+</li>
+<li><p>尽量采用模块化的，易管理的设计。网络本身已经是错综复杂的了，我们会更倾向将分布式的设备集中化的管理起来，如果有条件的话我们还可以将数据直观化，以图表方式呈现。</p>
+</li>
+<li><p>冗余设计，做好备用设计，企业内部服务器宕机以后损失可能是以秒算计的。</p>
+</li>
+<li><p>安全性。企业内外不能是完全封闭的，可能会提供一部分公网访问需求。一些来自于群众，一些来自于员工。在保持外界可访问的同时也要保障安全性。</p>
+</li>
+<li><p>可拓展性。拓扑不是一成不变的，要保证网络有拓展升级的可能。</p>
+</li>
+</ul>
+<h2 id="方案优化"><a href="#方案优化" class="headerlink" title="方案优化"></a>方案优化</h2><p>无可厚非是从四个维度去优化：<strong>负载、延迟、（不同设备，不同协议间的）兼容性与可靠性</strong>，但权重得看客户需求。涉及到部分 Qos。</p>
 
             </div>
 
