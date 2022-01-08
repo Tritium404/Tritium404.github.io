@@ -185,10 +185,47 @@
 <td>脚本语言这玩意儿得看需求，上面要是搭的 Wordpress 那就必须的 PHP 老兄上马了。对了 Python 优秀在易用性上。</td>
 </tr>
 </tbody></table>
-<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>小爷我今日开辟虚拟机一台，只予核心一颗，内存 2GB，足矣（毕竟我真机是 Intel Core i5-10400，一个核心还没有这么拉跨，虽然放服务器里面算拉跨的了），对了模拟的是 SSH 连接下的操作（我用的 Finalshell）。</p>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>小爷我今日开辟虚拟机一台，只予核心一颗，内存 2GB，足矣（毕竟我真机是 Intel Core i5-10400，一个核心还没有这么拉跨，虽然放服务器里面算拉跨的了），对了模拟的是 SSH 连接下的操作（我用的 Finalshell），以下全部操作基于 Root 账户。</p>
 <h3 id="对于-Debian-系（如-Ubuntu-等）"><a href="#对于-Debian-系（如-Ubuntu-等）" class="headerlink" title="对于 Debian 系（如 Ubuntu 等）"></a>对于 Debian 系（如 Ubuntu 等）</h3><p>Debian 采用了 apt 的包管理组件，故我们使用  <code>apt-get</code> 命令：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> apache2 <span class="token comment" spellcheck="true">#sudo允许非su用户执行符合安全策略下的需要su权限的命令 </span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> apache2 <span class="token comment" spellcheck="true">#安装apache2</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>sudo 允许非 su(superUser) 执行符合安全策略下的需要 su 权限的命令，如果你使用的其他账户登录，请在命令前加上 sudo </p>
+</blockquote>
+<p>会出现一个提问，意思是安装这玩意儿要消耗多少存储空间，你希望继续吗？此时我们输入 <code>y</code> 回车确认就行（这是每次安装软件都有的提问，以后将不再特意点出）。</p>
+<p>如果有必要的话，你也可以确认下是否安装成功：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">apt list --installed <span class="token operator">|</span> <span class="token function">grep</span> apache2
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>此操作将列出所有安装的软件并使用  <code>grep</code> 将列出的软件包的输出进行关键字的匹配，结果如下：</p>
+<pre><code>apache2-bin/stable,stable-security,now 2.4.51-1~deb11u1 amd64 [已安装，自动]
+apache2-data/stable,stable-security,now 2.4.51-1~deb11u1 all [已安装，自动]
+apache2-utils/stable,stable-security,now 2.4.51-1~deb11u1 amd64 [已安装，自动]
+apache2/stable,stable-security,now 2.4.51-1~deb11u1 amd64 [已安装]
+</code></pre>
+<p>那你肯定会问我：俺只装了一个 <code>apache2</code> ，这里咋又多蹦出三个呢？</p>
+<p>事实上你可以把前三个软件理解为构成 <code>apache2</code> 的组件，它们分别是二进制文件，数据和工具。</p>
+<p>在 Debian 系统下 apache 已经自动注册为服务了，我们来看看 apache 先生的衣食起居如何：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl status apache2
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>输出的是：</p>
+<pre><code>● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2022-01-08 14:59:31 CST; 4h 48min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 125078 (apache2)
+      Tasks: 55 (limit: 2301)
+     Memory: 16.8M
+        CPU: 421ms
+     CGroup: /system.slice/apache2.service
+             ├─125078 /usr/sbin/apache2 -k start
+             ├─125080 /usr/sbin/apache2 -k start
+             └─125081 /usr/sbin/apache2 -k start
+
+1月 08 14:59:31 debian1 systemd[1]: Starting The Apache HTTP Server...
+1月 08 14:59:31 debian1 systemd[1]: Started The Apache HTTP Server.
+</code></pre>
+<p>可以看出来 apache 在运行嘛 (active)，我们打开浏览器，键入虚拟机的ip地址，出现了 apache 的默认页即为成功。</p>
+<p><img src="/2022/01/08/LAMP%E7%8E%AF%E5%A2%83%E6%9E%84%E5%BB%BA/p0.webp"></p>
 
             </div>
 
