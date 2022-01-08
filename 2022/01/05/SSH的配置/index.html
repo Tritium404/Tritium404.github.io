@@ -143,8 +143,8 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="SSH的配置"><a href="#SSH的配置" class="headerlink" title="SSH的配置"></a>SSH的配置</h1><h2 id="安装-ssh"><a href="#安装-ssh" class="headerlink" title="安装 ssh"></a>安装 ssh</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token variable">$sudo</span> <span class="token function">apt-get</span> update  <span class="token comment" spellcheck="true">#更新软件源</span>
-<span class="token variable">$sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">ssh</span> <span class="token comment" spellcheck="true">#安装</span>
+                <h1 id="SSH的配置"><a href="#SSH的配置" class="headerlink" title="SSH的配置"></a>SSH的配置</h1><h2 id="安装-ssh"><a href="#安装-ssh" class="headerlink" title="安装 ssh"></a>安装 ssh</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update  <span class="token comment" spellcheck="true">#更新软件源</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">ssh</span> <span class="token comment" spellcheck="true">#安装</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>OpenSSH（即常说的 ssh）的常用配置文件有 <code>ssh_config</code> 和 <code>sshd_config</code> 。其中 <code>ssh_config</code> 为客户端配置文件，设置与客户端相关的应用可通过此文件实现；<code>sshd_config</code> 为服务器配置文件，设置与服务器相关的应用可通过此文件实现。</p>
 <p>一般来说我们常用的都是 <code>sshd_config</code> 配置文件，在 <code>sshd_config</code> 配置文件中，以“# ”（#加空格）开头的是注释信息；以“#”开头的是默认配置信息。</p>
