@@ -143,7 +143,7 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Vim的运用"><a href="#Vim的运用" class="headerlink" title="Vim的运用"></a>Vim的运用</h1><h2 id="Vi-简介"><a href="#Vi-简介" class="headerlink" title="Vi 简介"></a>Vi 简介</h2><p>Vi 是 Unix 世界里极为普遍的全屏幕文本编辑器，几乎可以说任何一台Unix 机器都会提供这个软件。Linux 当然也有，它的 vi 其实是 elvis（版权问题），不过它们都大同小异。熟悉 DOS 下的文本处理后，你也许会感到 vi 并不好用；Unix 上也已经发展出许多更新、更好用的文本编辑器，但是并不一定每一台 Unix 机器上都会安装这些额外的软件。所以，学习 vi 的基本操作还是有好处，让你在各个不同的机器上得心应手。 </p>
+                <h1 id="Vim的运用"><a href="#Vim的运用" class="headerlink" title="Vim的运用"></a>Vim的运用</h1><h2 id="Vi-简介"><a href="#Vi-简介" class="headerlink" title="Vi 简介"></a>Vi 简介</h2><p>Vi 是 Unix 世界里极为普遍的全屏幕文本编辑器，几乎可以说任何一台Unix 机器都会提供这个软件。Linux 当然也有，它的 vi 其实是 elvis（版权问题），不过它们都大同小异。熟悉 DOS 下的文本处理后，你也许会感到 vi 并不好用；Unix 上也已经发展出许多更新、更好用的文本编辑器，但是并不一定每一台 Unix 机器上都会安装这些额外的软件。所以，学习 vi 的基本操作还是有好处，让你在各个不同的机器上得心应手。 如果你只是像入门的话，你可以参考这篇文章：<a target="_blank" rel="noopener" href="https://github.com/vimtutor/vimtutor/blob/master/Vim%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB.md">vimtutor/Vim文本编辑命令汇总.md at master · vimtutor/vimtutor (github.com)</a>。</p>
 <h2 id="Vi-基本观念"><a href="#Vi-基本观念" class="headerlink" title="Vi 基本观念"></a>Vi 基本观念</h2><p>Unix 提供一系列的 ex 编辑器，包括 ex, edit 和 vi 。相对于全屏幕编辑器，现在 可能很难想像如何使用 ex, edit 这种行列编辑器（有人用过DOS 3.3 版以前所附的 EDLIN 吗？）。 Vi 的原意是 “Visual”，它是一个立即反应的编辑程序，也就是说可以立刻看到操作结果。</p>
 <p>也由于 vi 是全屏幕编辑器，所以它必须控制整个终端机屏幕哪里该显示些什么。而终端机的种类有许多种，特性又不尽相同，所以 vi 有必要知道现在所使用的是哪一种终端机。这是由 TERM 这个环境变量来设置，设置环境变量方面请查看所使用 shell 的说明。（除非执行 vi 的时候回应unknow terminal type ，否则可以不用设置。） </p>
 <p>只要简单的执行 vi 就可以进入 vi 的编辑环境。在实际操作之前先对它有个概略的了 解会比较好。Vi 有两种模式，输入模式以及指令模式。输入模式即是用来输入文字文本，而指令模式则是用来下达一些编排文件、存档、以及离开 vi 等等的操作指令。当执行 vi 后，会先进入指令模式，此时输入的任何字节都视为指令。</p>
