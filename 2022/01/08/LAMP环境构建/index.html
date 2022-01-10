@@ -143,8 +143,8 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="LAMP-环境构建"><a href="#LAMP-环境构建" class="headerlink" title="LAMP 环境构建"></a>LAMP 环境构建</h1><h2 id="何为-LAMP"><a href="#何为-LAMP" class="headerlink" title="何为 LAMP"></a>何为 LAMP</h2><p>LAMP 是四个软件的集合(Linux-Apache-MySQL-PHP)，也是目前国际流行的Web应用框架，其中包括Linux操作系统、Apache Web 服务器、MySQL/MariaDB 数据库和 PHP 编程语言环境以及相关组件支持。其实也不一定是以上这四个软件，还有得选。</p>
-<p>众所周知，Linux 上的软件包门类繁多，有分商业版和开源版等，而开源又能分出开源协议不同的发行版本。以 MySQL 为例，最早由一家瑞典公司开发，后面这家公司被 Sun 公司收购，Oracle 又把 Sun 收购了，所以 MySQL 的所有权归 Oracle 所有了。在两次收购中离开的工程师们就创立了它的新分支 MariaDB，这玩意儿大致是兼容 MySQL，不过我们在部署服务器的时候，没钱就尽量选择开源的，万一哪天开源版本不维护了呢？</p>
+                <h1 id="LAMP-环境构建"><a href="#LAMP-环境构建" class="headerlink" title="LAMP 环境构建"></a>LAMP 环境构建</h1><h2 id="何为-LAMP"><a href="#何为-LAMP" class="headerlink" title="何为 LAMP"></a>何为 LAMP</h2><p>LAMP 是四个软件的集合 (Linux-Apache-MySQL-PHP)，也是目前国际流行的Web应用框架，其中包括Linux操作系统、Apache Web 服务器、MySQL/MariaDB 数据库和 PHP 编程语言环境以及相关组件支持。其实也不一定是以上这四个软件，还有得选。</p>
+<p>众所周知，Linux 上的软件包门类繁多，有分商业版和开源版等，而开源又能分出开源协议不同的发行版本。以 MySQL 为例，最早由一家瑞典公司开发，后面这家公司被 Sun 公司收购，Oracle 又把 Sun 收购了，所以 MySQL 的所有权归 Oracle 所有了。在两次收购中离开的工程师们就创立了它的新分支 MariaDB，这玩意儿大致是兼容 MySQL，不过我们在部署服务器的时候，没钱就尽量选择开源的，万一哪天开源版本不维护了呢？比如 Oracle 对待开源软件的态度简直比白雪公主的后妈还毒，所以许多发行版的默认软件仓库已经剔除了 MySQL。</p>
 <p>我们用一个表格列出四个软件的详细介绍，同时提供一些可替代的选项（注意，开源几乎代表了免费）：</p>
 <table>
 <thead>
@@ -186,9 +186,10 @@
 </tr>
 </tbody></table>
 <h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>小爷我今日开辟虚拟机一台，只予核心一颗，内存 2GB，足矣（毕竟我真机是 Intel Core i5-10400，一个核心还没有这么拉跨，虽然放服务器里面算拉跨的了），对了模拟的是 SSH 连接下的操作（我用的 Finalshell），以下全部操作基于 Root 账户。</p>
-<h3 id="对于-Debian-系（如-Ubuntu-等）"><a href="#对于-Debian-系（如-Ubuntu-等）" class="headerlink" title="对于 Debian 系（如 Ubuntu 等）"></a>对于 Debian 系（如 Ubuntu 等）</h3><p>Debian 采用了 apt 的包管理组件，故我们使用  <code>apt-get</code> 命令：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> apache2 <span class="token comment" spellcheck="true">#安装apache2</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="对于-Debian-系（如-Ubuntu-等）"><a href="#对于-Debian-系（如-Ubuntu-等）" class="headerlink" title="对于 Debian 系（如 Ubuntu 等）"></a>对于 Debian 系（如 Ubuntu 等）</h3><h4 id="Apache-的安装"><a href="#Apache-的安装" class="headerlink" title="Apache 的安装"></a>Apache 的安装</h4><p>Debian 采用了 apt 的包管理组件，故我们使用  <code>apt-get</code> 命令：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">apt-get</span> update <span class="token comment" spellcheck="true">#更新下软件包列表</span>
+<span class="token function">apt-get</span> <span class="token function">install</span> apache2 <span class="token comment" spellcheck="true">#安装apache2</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
 <p>sudo 允许非 su(superUser) 执行符合安全策略下的需要 su 权限的命令，如果你使用的其他账户登录，请在命令前加上 sudo </p>
 </blockquote>
@@ -224,8 +225,88 @@ apache2/stable,stable-security,now 2.4.51-1~deb11u1 amd64 [已安装]
 1月 08 14:59:31 debian1 systemd[1]: Starting The Apache HTTP Server...
 1月 08 14:59:31 debian1 systemd[1]: Started The Apache HTTP Server.
 </code></pre>
+<blockquote>
+<p>没有启动的话就用：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl start apache2
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
 <p>可以看出来 apache 在运行嘛 (active)，我们打开浏览器，键入虚拟机的ip地址，出现了 apache 的默认页即为成功。</p>
+<blockquote>
+<p>无法访问的话请在防火墙设置里放行 <code>80</code> (http) 与 <code>443</code> (https) 端口。</p>
+</blockquote>
 <p><img src="/2022/01/08/LAMP%E7%8E%AF%E5%A2%83%E6%9E%84%E5%BB%BA/p0.webp"></p>
+<h4 id="MariaDB-的安装"><a href="#MariaDB-的安装" class="headerlink" title="MariaDB 的安装"></a>MariaDB 的安装</h4><p>有的人可能要问这里不应该是 MySQL 的主场了吗？为什么讲的是 MariaDB。因为 Oracle 对待 MySQL 的态度不佳，不能为其提供足够的开发与维护，这对于开源软件是致命的。</p>
+<p>同样的 apt 安装：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">apt <span class="token function">install</span> mariadb-server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>平平无奇的操作：</p>
+<pre><code>systemctl status mariadb
+</code></pre>
+<p>输出 MariaDB 状态：</p>
+<pre><code>● mariadb.service - MariaDB 10.5.12 database server
+     Loaded: loaded (/lib/systemd/system/mariadb.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2022-01-09 15:37:20 CST; 1min 30s ago
+       Docs: man:mariadbd(8)
+             https://mariadb.com/kb/en/library/systemd/
+    Process: 1014716 ExecStartPre=/usr/bin/install -m 755 -o mysql -g root -d /var/run/mysqld (code=exited, status=0/SUCCESS)
+    Process: 1014717 ExecStartPre=/bin/sh -c systemctl unset-environment _WSREP_START_POSITION (code=exited, status=0/SUCCESS)
+    Process: 1014719 ExecStartPre=/bin/sh -c [ ! -e /usr/bin/galera_recovery ] &amp;&amp; VAR= ||   VAR=`cd /usr/bin/..; /usr/bin/galera_recovery`; [ $? -eq &gt;
+    Process: 1014778 ExecStartPost=/bin/sh -c systemctl unset-environment _WSREP_START_POSITION (code=exited, status=0/SUCCESS)
+    Process: 1014780 ExecStartPost=/etc/mysql/debian-start (code=exited, status=0/SUCCESS)
+   Main PID: 1014766 (mariadbd)
+     Status: &quot;Taking your SQL requests now...&quot;
+      Tasks: 9 (limit: 2301)
+     Memory: 78.5M
+        CPU: 425ms
+     CGroup: /system.slice/mariadb.service
+             └─1014766 /usr/sbin/mariadbd
+
+1月 09 15:37:21 debian1 /etc/mysql/debian-start[1014785]: mysql
+</code></pre>
+<p>太对了，正在运行。没有启动的话就手动启动，不用我再教了。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">mysql_secure_installation
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>启用安全安装。它会让你注意下面的步骤：“嘿，我的老伙计，为了你的数据库安全，请小心一点！”，然后填写你 root 账户的密码。</p>
+<blockquote>
+<p>在 Linux 中，只要是输入密码的场合，你怎么按光标都是不会移动的，不过内容实际上是输入进去的，这点请放心。</p>
+</blockquote>
+<p>然后它就会问你是不是要设置 unix_socket 认证，如果你的 root 账户设置了密码倒是可以不用设置。我们安全地回答 <code>n</code> 。</p>
+<p>然后它又问你需要更改 root 密码吗？我们回答 <code>n</code> 。</p>
+<p>然后又问你需要移除匿名用户吗？那是当然，我们回答 <code>y</code> 。</p>
+<p>然后问你需要禁止远程 root 用户登陆吗？禁用了一点不方便，当然回答 <code>n</code>。</p>
+<p>够了够了已经很多个然后了，移除测试数据库吗？移除 <code>y</code>。</p>
+<p>问你保存设置并且立马载入吗？回答<code>y</code>。</p>
+<p>好了你的数据库应该挺安全了。</p>
+<p>咱接下来输入：</p>
+<pre><code>mysql -u root -p
+</code></pre>
+<p>以 root 用户登录 MySQL。</p>
+<p>进入数据库成功然后就根据你的上层需求来配置数据库了。</p>
+<h4 id="配置-PHP-环境"><a href="#配置-PHP-环境" class="headerlink" title="配置 PHP 环境"></a>配置 PHP 环境</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">apt-get</span> update <span class="token comment" spellcheck="true">#更新下软件包列表</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> php libapache2-mod-php php-mysql <span class="token comment" spellcheck="true">#装三个软件</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>有的人可能要问，我明明要装的是 <code>php</code> 啊，为什么还要装那那个额外的软件？</p>
+<p><code>libapache2-mod-php</code> 的作用是让 <code>apache</code> 能够解析 <code>php</code>，而 <code>php-mysql</code> 的作用是能够让 <code>php</code> 对 <code>mysql</code> 操作。</p>
+<p>安装完以后，我们再来测试下  <code>php</code>  的关联正不正常，<code>apache</code>  能不能解析到 <code>php</code> 文件。</p>
+<p>总所周知，我搭 LAMP 环境那就是为了建网站，那么那些网页放哪里呢？也包括我们待会要用到的 <code>phpinfo</code> 测试页。</p>
+<p>我们可以把他们存储到 <code>/var/www/html</code> 下，于是乎，我们在其下创建一个 <code>php</code> 文件：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /var/www/html <span class="token comment" spellcheck="true">#载入到该目录</span>
+<span class="token function">touch</span> info.php <span class="token comment" spellcheck="true">#新建该文件</span>
+<span class="token function">vi</span> info.php
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>然后按 <code>i</code> 进入编辑模式，键入以下内容：</p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token function">phpinfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>然后一如既往地 <code>:wq</code> 保存。保存好以后，我们来访问测试页：<a target="_blank" rel="noopener" href="http://127.0.0.1/info.php">http://127.0.0.1/info.php</a></p>
+<blockquote>
+<p>如果你是用的桥接模式，请直接访问：http://你的虚拟机在内网的ip/info.php</p>
+</blockquote>
+<p>算了不贴图了，如果出现了一个紫色的 php 测试页那就是成功了。</p>
+<p>算了放个超链接，不用在意上面的文字，你只要：</p>
+<p><img src="http://img.php.cn/upload/image/220/793/114/1479085601284340.png"></p>
+<p>差不多了，数据库账号这些自己按需分配，你可以给不同用户分配不同的权限，某些框架会使用用户来完成对数据库的操作。</p>
+<p>更细致的命令自己百度吧。</p>
 
             </div>
 
