@@ -95,7 +95,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Debian/">Debian</a></li><li><a class="category-link" href="/categories/NetMgr/">NetMgr</a></li><li><a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
+	                        <a class="category-link" href="/categories/Debian/">Debian</a></li><li><a class="category-link" href="/categories/NetMgr/">NetMgr</a></li><li><a class="category-link" href="/categories/Windows/">Windows</a></li><li><a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
 	                    </ul>
 	        </li>
 	        
@@ -138,12 +138,14 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 ></h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://inews.gtimg.com/newsapp_bt/0/12332472680/641);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >WSL 从入门到入土</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="WSL-是个啥"><a href="#WSL-是个啥" class="headerlink" title="WSL 是个啥"></a>WSL 是个啥</h1><p>形象的解释就是相当于 Windows 上跑了个性能更好兼容性更好的虚拟机来运行 Linux（鬼知道他们用了什么奇奇怪怪的虚拟化技术）。在 WSL2 的迭代中，子系统的内核已经是完整的了，这就意味着你可以使用这个子系统来完成调试与编译工作，因为内置的 Linux 环境已经是完整的了。并且你可以在 Windows Store 按照你的口味来选择你想要的发行版。那么教程开始。</p>
+                <h1 id="WSL-是个啥"><a href="#WSL-是个啥" class="headerlink" title="WSL 是个啥"></a>WSL 是个啥</h1><p>形象的解释就是相当于 Windows 上跑了个性能更好兼容性更好的虚拟机来运行 Linux（鬼知道他们用了什么奇奇怪怪的虚拟化技术）。</p>
+<p><img src="https://pica.zhimg.com/v2-31e0967932282573c31389920159bb85_r.jpg?source=1940ef5c"></p>
+<p>在 WSL2 的迭代中，子系统的内核已经是完整的了，这就意味着你可以使用这个子系统来完成调试与编译工作，因为内置的 Linux 环境已经是完整的了。并且你可以在 Windows Store 按照你的口味来选择你想要的发行版。那么教程开始。</p>
 <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p>那让我们熟练的打开控制面板，找到“程序与功能”，左边有个“启用或关闭 Windows 功能”，然后我们把“适用于 Linux 的 Windows 子系统”，进度条跑完了就重启。</p>
 <p>重启完以后直奔 windows Store 下载 Windows Subsystem for Linux Preview ，对了记得再在商店里面下载一个你喜欢的发行版，我有两台电脑，其中一台下载的是大蜥蜴 (OpenSUSE) 就拿它演示吧。</p>
 <pre><code>Installing, this may take a few minutes...
@@ -156,11 +158,11 @@ Press any key to continue...
 <p>很好，让我们点开大蜥蜴图标，黑漆漆的界面呈现了一排字：安装中，请稍候。</p>
 <p>俺也不知道安装了这么久，我在任务管理器连一点占用都看不到。很好，我又回到控制面板把“虚拟机平台”功能打开了。再来一次。额这次报错好像更严重了：0x8000000d。然后突然想起来 VMware 好像不兼容 Hyper-V，我尝试启动了 VMware 的虚拟机，好家伙虚拟机真打不开了。我又卸载了 VMware 然后我的物理机好像也有点小问题了，关机的时候会闪过一个报错小窗口。然后我控制变量回到控制面板把“虚拟机平台“的功能关了。再次关机依然有个小报错窗口，我再次打开蜥蜴图标，又变成了安装中，请稍候。等到天荒地老后，出现报错：0x80370114。</p>
 <p>怀疑是 Hyper-V 服务没启动，就开始直接访问 Hyper-V。</p>
-<p>Powershell 执行：</p>
+<p>PowerShell 执行：</p>
 <pre class="line-numbers language-powershell"><code class="language-powershell">net <span class="token function">start</span> vmcompute
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>很好输出结果是服务无法启动。我们去服务（自己在设置里搜索）里检查下 Hyper-V 是否被禁用。</p>
-<p>看了下都是手动或自动，没有问题。然后我们尝试强制启用 Hyper-V：</p>
+<p>看了下都是手动或自动，没有问题。然后我们尝试命令行启用 Hyper-V：</p>
 <pre class="line-numbers language-powershell"><code class="language-powershell">Enable<span class="token operator">-</span>WindowsOptionalFeature <span class="token operator">-</span>Online <span class="token operator">-</span>FeatureName Microsoft<span class="token operator">-</span>Hyper<span class="token operator">-</span>V <span class="token operator">-</span>All
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后重启。很好一番调试以后还是不行。我们来到服务界面，找到”Hyper-V 虚拟机管理“，然后禁用，再启用。这次报错了0x8007000e，说是内存不足，可能是内存期望不足吧。好，我们加！</p>
@@ -169,8 +171,8 @@ Press any key to continue...
 <p>很好我早就预料到了，你不听话装作无响应，那么掏出任务管理器终结，好了在服务界面已经可以启动了。好了这次没有任何报错。</p>
 <p>一样的，再 Hyper-V 虚拟机管理界面还是无法连接到本机。</p>
 <p>今天是第二天，我继续查找上次的错误码，找到篇帖子 <a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/4084">WslRegisterDistribution failed with error: 0x8000000d An illegal state change was requested. · Issue #4084 · microsoft/WSL (github.com)</a>，现在好像还没有明确的解决办法。</p>
-<p>我又回到另一台机子，上面的 Windows 版本是工作站版本。只启用了“Hyper-V”与“适用于 Linux 的 Windows 子系统”然后就成了，有些离谱。我觉得我又可以了，于是将另一台 Windows 专业版的电脑重置到装 WSL 以前。一番操作后，还是卡在等待界面，气死了不搞了，它爱咋咋地吧，Vmware 也不是不能用。最后总结下：如果打开了那两个选项还报错的就重启下安装 WSL，等待界面卡了很久还是会报错的。听天由命吧，反正 Vmware 也不是不能用，只是从 Windows Terminal 启动是要优雅些。</p>
-<h2 id="入土"><a href="#入土" class="headerlink" title="入土"></a>入土</h2><p><strong>不过给个大概思路：Windows功能是否启用/主板虚拟化支持开启没有/服务是否被禁用/Hyper-V组件能正常启动否/使用 DISM命令检查组件完整性/杀毒软件问题/检查已注册的WSL，卸载并重新安装。总的来说这些问题不是每台机器都会遇到的，还是要看人品。</strong></p>
+<p>我又回到另一台机子，上面的 Windows 版本是工作站版本。只启用了“Hyper-V”与“适用于 Linux 的 Windows 子系统”然后就成了，有些离谱。我觉得我又可以了，于是将另一台 Windows 专业版的电脑重置到装 WSL 以前。一番操作后，还是卡在等待界面，气死了不搞了，它爱咋咋地吧，VMware 也不是不能用。最后总结下：如果打开了那两个选项还报错的就重启下安装 WSL，等待界面卡了很久还是会报错的。听天由命吧，反正 VMware 也不是不能用，只是从 Windows Terminal 启动是要优雅些。</p>
+<h2 id="入土"><a href="#入土" class="headerlink" title="入土"></a>入土</h2><p><strong>不过给个大概思路：Windows功能是否启用/主板虚拟化支持开启没有/服务是否被禁用/Hyper-V 组件能正常启动否/使用 DISM 命令检查组件完整性/杀毒软件问题/检查已注册的 WSL，卸载并重新安装。总的来说这些问题不是每台机器都会遇到的，还是要看人品。</strong></p>
 
             </div>
 

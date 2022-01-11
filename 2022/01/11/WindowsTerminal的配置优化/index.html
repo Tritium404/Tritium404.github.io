@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    珍珠之歌
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="debian" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">归返主页</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Debian/">Debian</a></li><li><a class="category-link" href="/categories/NetMgr/">NetMgr</a></li><li><a class="category-link" href="/categories/Windows/">Windows</a></li><li><a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="画廊">
+		                画廊
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于">
+		                关于
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/Tritium404" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://pic3.zhimg.com/v2-5254f9f16f691ad2249830bb13b8dbf7_1440w.jpg?source=172ae18b);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Windows Terminal 的配置优化</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Windows-Terminal-的配置优化"><a href="#Windows-Terminal-的配置优化" class="headerlink" title="Windows Terminal 的配置优化"></a>Windows Terminal 的配置优化</h1><p>Windows 11 带来了个全新的终端，刚打开的时候发现的确比那个人老珠黄的 CMD 好看多了。当然两者的作用不一样，不过也比PowerShell 好看啊。现在你用 [Windows] + [X] 快捷键蹦出来的菜单里已经看不到 PowerShell 了，终端取而代之了。这说明什么？微软要用 Windows Terminal 集大成。</p>
+<p>你可以在里面 CMD，PowerShell，也可以在安装 Git bash 的时候勾选在 Windows Terminal 里添加配置，这样你也能在终端里 Git 了。下面我们来让这位素人更迷人些吧。</p>
+<h2 id="安装字体"><a href="#安装字体" class="headerlink" title="安装字体"></a>安装字体</h2><p>在这个发布页 <a target="_blank" rel="noopener" href="https://github.com/ryanoasis/nerd-fonts/releases/">nerd-fonts </a> 下找到最新的 Released，下载里面的 <strong>Fira Code</strong>。你问我为啥啊，因为知乎答主说这个好看啊，有很多人好评啊。</p>
+<p>先解压，然后找个你喜欢的字重安装，你要是不知道字重是啥意思就安装 <code>Fira Code Retina Nerd Font Complete.ttf</code>好了。双击然后左上角点击安装就能直接安装到 Windows 系统。</p>
+<h2 id="更新-PowerShell（安装-PowerShell-Core）"><a href="#更新-PowerShell（安装-PowerShell-Core）" class="headerlink" title="更新 PowerShell（安装 PowerShell Core）"></a>更新 PowerShell（安装 PowerShell Core）</h2><p>一样的，从 <a target="_blank" rel="noopener" href="https://github.com/PowerShell/PowerShell/releases">Releases · PowerShell (github.com)</a> 下载最新的 <code>x64</code> 版本。然后安装。</p>
+<p><img src="/2022/01/11/WindowsTerminal%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BC%98%E5%8C%96/p0.webp" alt="这人设图有点好笑"></p>
+<p>打开 PowerShell，注意不是终端。</p>
+<p>安装 PSReadline 包，该插件可以让命令行很好用，类似 zsh</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">Install<span class="token operator">-</span>Module <span class="token operator">-</span>Name PSReadLine  <span class="token operator">-</span>Scope CurrentUser
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装 posh-git 包，让你的 git 更好用</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">Install<span class="token operator">-</span>Module posh<span class="token operator">-</span>git  <span class="token operator">-</span>Scope CurrentUser
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装 oh-my-posh 包，让你的命令行更酷炫、优雅</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">Install<span class="token operator">-</span>Module oh<span class="token operator">-</span>my<span class="token operator">-</span>posh <span class="token operator">-</span>Scope CurrentUser
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>注意：交互操作时（回答是否时）请用大写字母。</p>
+</blockquote>
+<p>随后打开 Windows Terminal 的设置，新建配置文件，由于界面是图形化的，这里不多讲。</p>
+<p>名称：<code>PowerShell Core</code></p>
+<p>命令行：<code>安装目录\PowerShell\7\pwsh.exe</code></p>
+<p>启动目录：<code>%USERPROFILE%</code></p>
+<p>图标：<code>安装目录\PowerShell\7\assets\Powershell_av_colors.ico</code></p>
+<p>选项卡标题不填。</p>
+<p>外观那里把显示所有字体打开，选择我们安装的字体。</p>
+<p>保存即可。然后在默认启动配置里面把我们设置的改成默认项。</p>
+<h2 id="添加启动参数"><a href="#添加启动参数" class="headerlink" title="添加启动参数"></a>添加启动参数</h2><p>新建配置文件：</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">notepad<span class="token punctuation">.</span>exe <span class="token variable">$Profile</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后粘贴；</p>
+<pre><code>&lt;#
+ * FileName: Microsoft.PowerShell_profile.ps1
+ * Author: 刘 鹏
+ * Email: littleNewton6@outlook.com
+ * Date: 2021, Aug. 21
+ * Copyright: No copyright. You can use this code for anything with no warranty.
+#&gt;
+
+
+#------------------------------- Import Modules BEGIN -------------------------------
+# 引入 posh-git
+Import-Module posh-git
+
+# 引入 oh-my-posh
+Import-Module oh-my-posh
+
+# 引入 ps-read-line
+Import-Module PSReadLine
+
+# 设置 PowerShell 主题
+# Set-PoshPrompt ys
+Set-PoshPrompt paradox
+#------------------------------- Import Modules END   -------------------------------
+
+
+
+
+
+#-------------------------------  Set Hot-keys BEGIN  -------------------------------
+# 设置预测文本来源为历史记录
+Set-PSReadLineOption -PredictionSource History
+
+# 每次回溯输入历史，光标定位于输入内容末尾
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+
+# 设置 Tab 为菜单补全和 Intellisense
+Set-PSReadLineKeyHandler -Key &quot;Tab&quot; -Function MenuComplete
+
+# 设置 Ctrl+d 为退出 PowerShell
+Set-PSReadlineKeyHandler -Key &quot;Ctrl+d&quot; -Function ViExit
+
+# 设置 Ctrl+z 为撤销
+Set-PSReadLineKeyHandler -Key &quot;Ctrl+z&quot; -Function Undo
+
+# 设置向上键为后向搜索历史记录
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+
+# 设置向下键为前向搜索历史纪录
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+#-------------------------------  Set Hot-keys END    -------------------------------
+
+
+
+
+
+#-------------------------------    Functions BEGIN   -------------------------------
+# Python 直接执行
+$env:PATHEXT += &quot;;.py&quot;
+
+# 更新系统组件
+function Update-Packages &#123;
+    # update pip
+    Write-Host &quot;Step 1: 更新 pip&quot; -ForegroundColor Magenta -BackgroundColor Cyan
+    $a = pip list --outdated
+    $num_package = $a.Length - 2
+    for ($i = 0; $i -lt $num_package; $i++) &#123;
+        $tmp = ($a[2 + $i].Split(&quot; &quot;))[0]
+        pip install -U $tmp
+    &#125;
+
+    # update TeX Live
+    $CurrentYear = Get-Date -Format yyyy
+    Write-Host &quot;Step 2: 更新 TeX Live&quot; $CurrentYear -ForegroundColor Magenta -BackgroundColor Cyan
+    tlmgr update --self
+    tlmgr update --all
+
+    # update Chocolotey
+    Write-Host &quot;Step 3: 更新 Chocolatey&quot; -ForegroundColor Magenta -BackgroundColor Cyan
+    choco outdated
+&#125;
+#-------------------------------    Functions END     -------------------------------
+
+
+
+
+
+#-------------------------------   Set Alias BEGIN    -------------------------------
+# 1. 编译函数 make
+function MakeThings &#123;
+    nmake.exe $args -nologo
+&#125;
+Set-Alias -Name make -Value MakeThings
+
+# 2. 更新系统 os-update
+Set-Alias -Name os-update -Value Update-Packages
+
+# 3. 查看目录 ls &amp; ll
+function ListDirectory &#123;
+    (Get-ChildItem).Name
+    Write-Host(&quot;&quot;)
+&#125;
+Set-Alias -Name ls -Value ListDirectory
+Set-Alias -Name ll -Value Get-ChildItem
+
+# 4. 打开当前工作目录
+function OpenCurrentFolder &#123;
+    param
+    (
+        # 输入要打开的路径
+        # 用法示例：open C:\
+        # 默认路径：当前工作文件夹
+        $Path = &#39;.&#39;
+    )
+    Invoke-Item $Path
+&#125;
+Set-Alias -Name open -Value OpenCurrentFolder
+#-------------------------------    Set Alias END     -------------------------------
+
+
+
+
+
+#-------------------------------   Set Network BEGIN    -------------------------------
+# 1. 获取所有 Network Interface
+function Get-AllNic &#123;
+    Get-NetAdapter | Sort-Object -Property MacAddress
+&#125;
+Set-Alias -Name getnic -Value Get-AllNic
+
+# 2. 获取 IPv4 关键路由
+function Get-IPv4Routes &#123;
+    Get-NetRoute -AddressFamily IPv4 | Where-Object -FilterScript &#123;$_.NextHop -ne &#39;0.0.0.0&#39;&#125;
+&#125;
+Set-Alias -Name getip -Value Get-IPv4Routes
+
+# 3. 获取 IPv6 关键路由
+function Get-IPv6Routes &#123;
+    Get-NetRoute -AddressFamily IPv6 | Where-Object -FilterScript &#123;$_.NextHop -ne &#39;::&#39;&#125;
+&#125;
+Set-Alias -Name getip6 -Value Get-IPv6Routes
+#-------------------------------    Set Network END     -------------------------------
+</code></pre>
+<p>你可以在注释里找到这位大佬的联系方式。</p>
+<p>关闭终端，再打开，就会开始下载组件，下载不了的就使用魔法上网。加载完以后你就会发现界面变了一些。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a> 驱动</li>
+                <li>渝ICP备2021008011号</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
