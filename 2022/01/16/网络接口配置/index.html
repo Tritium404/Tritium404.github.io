@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    珍珠之歌
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="debian" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">归返主页</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Debian/">Debian</a></li><li><a class="category-link" href="/categories/NetMgr/">NetMgr</a></li><li><a class="category-link" href="/categories/Windows/">Windows</a></li><li><a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="画廊">
+		                画廊
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于">
+		                关于
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/Tritium404" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://media.istockphoto.com/photos/closeup-of-a-server-network-panel-with-lights-and-cables-picture-id157647179?b=1&amp;k=20&amp;m=157647179&amp;s=170667a&amp;w=0&amp;h=_PH6Gw_7yN8laySxtTz53dedpFX3f41sV3Dhc3hkkck=);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >网络接口配置</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="网络接口配置"><a href="#网络接口配置" class="headerlink" title="网络接口配置"></a>网络接口配置</h1><h2 id="对于-Debian-系"><a href="#对于-Debian-系" class="headerlink" title="对于 Debian 系"></a>对于 Debian 系</h2><p>debian 的网卡配置文件在 <code>/etc/network/interfaces</code>，我们  <code>cat</code> 一下文件内容：</p>
+<pre><code># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+# The primary network interface
+allow-hotplug ens33
+iface ens33 inet static
+        address 192.168.1.191/24
+        gateway 192.168.1.1
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 119.29.29.29
+        dns-search debian_1
+</code></pre>
+<h2 id="环回接口"><a href="#环回接口" class="headerlink" title="环回接口"></a>环回接口</h2><p>开头的注释就是说这个文件描述了可用的网络接口。接下来是环回网络接口：</p>
+<pre><code># The loopback network interface
+auto lo
+iface lo inet loopback
+</code></pre>
+<p>第二行是 lo(op) 接口是在系统启动时会被自动配置的，第三行是将 lo 接口设置为一个本地回环 (loopback) 地址，在 IPV4 下 <code>ping 127.0.0.1</code> 就可以有回应。</p>
+<pre><code># The primary network interface
+allow-hotplug ens33
+iface ens33 inet static
+        address 192.168.1.191/24
+        gateway 192.168.1.1
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 119.29.29.29
+        dns-search debian_1
+</code></pre>
+<h2 id="网卡接口"><a href="#网卡接口" class="headerlink" title="网卡接口"></a>网卡接口</h2><p>检测到热插拔才启动 <code>ens33</code> 接口</p>
+<p>注意 <code>allow-hotplug</code>  就是允许热插拔。</p>
+<blockquote>
+<p>hotplug 与 auto 的区别是，前者检测到热插拔事件（硬件已接入）才启动接口；后者是自动无论接入否都会启动。</p>
+</blockquote>
+<p>VMware 等虚拟机会根据物理机的网卡特性提供不同的虚拟网卡，所以我在同一台物理机上装不同的发行版是网卡的名称是相同的（但是也有的发行版对网卡的命名规则是不同的）。</p>
+<p>第二行开始 <code>iface</code> 配置 <code>ens33</code> 接口，静态地址。设置 <code>ip</code> 地址，子网掩码 <code>24</code> 位。然后是网关。下面是 <code>DNS</code> 选项由  <code>resolvconf</code> 包提供（如果已安装的话）。</p>
+<p>我们来列个表格，这样详细一点，<code>iface</code> 参数构成：</p>
+<pre><code>iface [接口] [协议] [分配方式]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>可选值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>接口</td>
+<td>由系统提供</td>
+<td><code>en</code> 标识 <code>ethernet</code>（以太网）；<code>o</code> 标识主板板载网卡；<code>p</code> 标识独立网卡，PCI 网卡；<code>s</code> 标识热插拔网卡，USB 之类的扩展槽引导号；数字标识 MAC 地址与主板信息计算得出的唯一序列。</td>
+</tr>
+<tr>
+<td>IP 协议版本</td>
+<td>inet/inet6</td>
+<td><code>inet</code> 是 <code>internet</code> 的缩写。<code>inet</code> 指代 <code>ipv4</code> ； <code>inet6</code> 指代 <code>ipv6</code>。</td>
+</tr>
+<tr>
+<td>地址分配方式</td>
+<td>static/dhcp/ manual</td>
+<td>静态地址与动态分配。最后者没有为接口定义 IP 地址。通常由作为桥接或聚合成员的接口，需要以混杂模式运行的接口（例如，端口镜像或网络 TAP）或在其上配置了 VLAN 设备的接口使用。这是保持接口不带 IP 地址的一种方法。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>address</td>
+<td>ipv4 或ipv6 地址/子网掩码</td>
+<td>子网掩码可选，指定主机号位数。</td>
+</tr>
+<tr>
+<td>gateway</td>
+<td>ipv4/ipv6 地址</td>
+<td>网关，指定局域网出口，用于与外界通信。</td>
+</tr>
+<tr>
+<td>dns-nameservers</td>
+<td>ipv4/ipv6 地址</td>
+<td><code>DNS</code> 解析服务器地址，可以指定给路由器，也可以指定外部地址。需要 <code>resolvconf</code> 包的支持。如果有备用 <code>DNS</code> 的话，请这样书写：<code>dns-nameservers 12.34.56.78 12.34.56.79</code>。</td>
+</tr>
+<tr>
+<td>dns-search</td>
+<td>主机名</td>
+<td>域名解析服务器地址。<code>dns_search</code> 它的一个用处是程序只须要知道主机名就能够解析到 ip，没必要知道域后缀是什么。作为域附加到主机查询中，以创建FQDN。详情：<a target="_blank" rel="noopener" href="https://blog.csdn.net/x356982611/article/details/105868570">dns配置文件 /etc/resolv.conf中search设置详解_云淡风轻-CSDN博客_dns search</a></td>
+</tr>
+<tr>
+<td>netmask</td>
+<td>子网掩码</td>
+<td>点分十进制，在 <code>ipv6</code> 则不需要，因为 <code>ipv6</code> 已经没有子网掩码的概念了。在 <code>ipv6</code> 中前 <code>48</code> 位表示网络前缀，其后的 <code>16</code> 位是子网 ID 最后 <code>64</code> 位是接口标识。</td>
+</tr>
+<tr>
+<td>vlan-raw-device</td>
+<td>接口</td>
+<td>在 <code>VLAN</code> 接口上，定义其“父亲”。</td>
+</tr>
+<tr>
+<td>bridge_ports</td>
+<td>接口</td>
+<td>在网桥接口上，定义其成员。</td>
+</tr>
+<tr>
+<td>down</td>
+<td>控制命令</td>
+<td>使用以下命令代替来关闭接口 <code>ifdown</code>。</td>
+</tr>
+<tr>
+<td>post-down</td>
+<td>控制命令</td>
+<td>接口关闭后立即采取的措施。</td>
+</tr>
+<tr>
+<td>pre-up</td>
+<td>控制命令</td>
+<td>接口启动之前的操作。</td>
+</tr>
+<tr>
+<td>up</td>
+<td>控制命令</td>
+<td>使用以下命令代替接口 <code>ifup</code>。使用上的任何选项完全取决于您的想象 <code>iputils</code>。例如，我们可以在操作过程中 <code>up ip link set $IFACE up mtu 9000</code> 启用巨型帧 ( Jumbo_frame )，<code>up</code>（而不是使用 <code>mtu</code> 选项本身）。您也可以调用其他任何软件，例如 <code>up sleep 5; mii-tool -F 100baseTx-FD $IFACE</code> 在接口启动后 5 秒钟强制 <code>100Mbps</code> 全双工。</td>
+</tr>
+<tr>
+<td>hwaddress ether</td>
+<td>48 位冒号分隔</td>
+<td>更改接口的 <code>MAC</code> 地址，而不要使用硬编码到 <code>ROM</code> 中或由算法生成的地址。您可以使用关键字  <code>random</code> 来获取随机的 <code>MAC</code> 地址。</td>
+</tr>
+<tr>
+<td>wpa-ssid</td>
+<td>Unicode字符</td>
+<td>服务区标识（名称标识）。</td>
+</tr>
+<tr>
+<td>mtu</td>
+<td>0-1942</td>
+<td><code>MTU</code> 大小。<code>mtu 9000</code>=巨型帧。如果您的 Linux 主机与支持与更大 <code>MTU</code> 大小的交换机连接，则很有用。当然，这可能会破坏某些协议。</td>
+</tr>
+<tr>
+<td>wpa-psk</td>
+<td>8到63个 <code>ASCII</code> 字符，或64 个 16 进制数字</td>
+<td>十六进制编码的 PSK。</td>
+</tr>
+<tr>
+<td>ip_rp_filter</td>
+<td>0/1/2</td>
+<td>反向过滤（检查）。<code>0</code> 为关闭 [不管数据的进来的接口 与根据路由所决定的返回接口是否一致，也不管返回数据的目标地址（进来数据时的源地址）根据 <code>route</code> 是否可以可达。]。<code>1</code> 表示松散限制，只要返回数据的目标地址（进来数据时的源地址）根据route可以可达（而不管数据进来的接口是否就是返回数据出去的接口），就可以通过。<code>2</code>  严格限制 ，只要数据的进来的接口 与根据路由所决定的返回接口不一致数据就不允许通过。</td>
+</tr>
+</tbody></table>
+<h2 id="更多信息"><a href="#更多信息" class="headerlink" title="更多信息"></a>更多信息</h2><p>更多细节请参考：</p>
+<p><a target="_blank" rel="noopener" href="https://wiki.debian.org/NetworkConfiguration">NetworkConfiguration - Debian Wiki</a></p>
+<p><a target="_blank" rel="noopener" href="https://qastack.cn/unix/128439/good-detailed-explanation-of-etc-network-interfaces-syntax">关于/ etc / network / interfaces语法的详细说明？ (qastack.cn)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/weihua2020/p/14039145.html">linux内核参数-rp_filter - helloweifa - 博客园 (cnblogs.com)</a></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a> 驱动</li>
+                <li>渝ICP备2021008011号</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
