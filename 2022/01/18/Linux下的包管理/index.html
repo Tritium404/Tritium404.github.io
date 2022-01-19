@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    珍珠之歌
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="debian" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">归返主页</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Debian/">Debian</a></li><li><a class="category-link" href="/categories/NetMgr/">NetMgr</a></li><li><a class="category-link" href="/categories/Windows/">Windows</a></li><li><a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="画廊">
+		                画廊
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="关于">
+		                关于
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/Tritium404" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 ></h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Linux-下的包管理"><a href="#Linux-下的包管理" class="headerlink" title="Linux 下的包管理"></a>Linux 下的包管理</h1><h2 id="对于-Debian-系"><a href="#对于-Debian-系" class="headerlink" title="对于 Debian 系"></a>对于 Debian 系</h2><h3 id="dpkg-命令"><a href="#dpkg-命令" class="headerlink" title="dpkg 命令"></a>dpkg 命令</h3><p>由于 dpkg命令现在很少用，现在只列一个简表，更多命令可以通过 <code>dpkg --help</code> 查询。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>示例</th>
+<th>补全</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-i</td>
+<td>dpkg -i package.deb</td>
+<td>–install</td>
+<td>安装一个 deb 包</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>dpkg -l package</td>
+<td>–list</td>
+<td>列出该包的简要信息（版本号，架构，描述）</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>dpkg -L package</td>
+<td>–listfiles</td>
+<td>列出与该包相关的路径</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>dpkg -r package</td>
+<td>–remove</td>
+<td>仅移除包，不删除配置文件</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>dpkg -R /</td>
+<td>–recursive</td>
+<td>递归参数</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>dpkg -p package</td>
+<td>–print-avail</td>
+<td>显示可用的版本细节</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>dpkg -P package</td>
+<td>–purge</td>
+<td>完全移除一个包</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>dpkg -s package</td>
+<td>–status</td>
+<td>展示此包的细节及状态</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>dpkg -S pattern</td>
+<td>–search</td>
+<td>检索包归属的文件</td>
+</tr>
+<tr>
+<td>-C</td>
+<td>dpkg -C package</td>
+<td>–audit</td>
+<td>检查是否有损坏的包</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>dpkg –A package.deb</td>
+<td>–record-avail</td>
+<td>记录可用包</td>
+</tr>
+<tr>
+<td>-V</td>
+<td>dpkg -V package</td>
+<td>–verify</td>
+<td>验证包的完整性</td>
+</tr>
+<tr>
+<td>-？</td>
+<td>dpkg -?</td>
+<td>–help</td>
+<td>显示帮助</td>
+</tr>
+</tbody></table>
+<h4 id="关于-dpkg-状态的修复"><a href="#关于-dpkg-状态的修复" class="headerlink" title="关于 dpkg 状态的修复"></a>关于 <code>dpkg</code> 状态的修复</h4><p>在执行各种包管理命令时，<code>dpkg</code> 存在一个状态文件，来记录软件是否被安装；版本号是多少；配置文件存在否，以及它在哪里等等。</p>
+<h3 id="apt-get-命令"><a href="#apt-get-命令" class="headerlink" title="apt-get 命令"></a>apt-get 命令</h3><p><code>apt-get</code> 命令更加简单易用，可以看作是基于 <code>dpkg</code> 命令的实现。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>update</td>
+<td>更新软件包列表至本地</td>
+</tr>
+<tr>
+<td>upgrade</td>
+<td>更新软件，但若依赖文件出现相互依存，或者升级会破坏其他的文件依赖时候停止升级</td>
+</tr>
+<tr>
+<td>install</td>
+<td>安装</td>
+</tr>
+<tr>
+<td>reinstall</td>
+<td>重新安装</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>卸载软件，但保留其配置</td>
+</tr>
+<tr>
+<td>autoremove</td>
+<td>移除软件及其依赖（可能会让其他需要此依赖的软件出错）</td>
+</tr>
+<tr>
+<td>purge</td>
+<td>卸载软件并清除其配置</td>
+</tr>
+<tr>
+<td>dist-upgrade</td>
+<td>更新软件，如果有依赖性问题，尝试解决和移除。会造成文件依赖的破坏风险。</td>
+</tr>
+<tr>
+<td>dselect-upgrade</td>
+<td>使用 dselect 更新（大概相当于 <code>apt-get update</code> 与 <code>apt-get upgrade</code> 连招）</td>
+</tr>
+<tr>
+<td>build-dep</td>
+<td>安装编译某个软件包的环境</td>
+</tr>
+<tr>
+<td>satisfy</td>
+<td>安装依赖</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>无差别清理安装包</td>
+</tr>
+<tr>
+<td>autoclean</td>
+<td>清理安装包，但会保留已安装软件的软件包</td>
+</tr>
+<tr>
+<td>check</td>
+<td>检查是否有损坏的依赖</td>
+</tr>
+<tr>
+<td>source</td>
+<td>获取某个软件的源码</td>
+</tr>
+<tr>
+<td>download</td>
+<td>下载二进制包</td>
+</tr>
+<tr>
+<td>changelog</td>
+<td>更新日志</td>
+</tr>
+</tbody></table>
+<h5 id="忽略更新"><a href="#忽略更新" class="headerlink" title="忽略更新"></a>忽略更新</h5><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>apt-mark hold packagename</td>
+<td>忽略某个包的更新</td>
+</tr>
+<tr>
+<td>apt-mark unhold packagename</td>
+<td>取消忽略</td>
+</tr>
+</tbody></table>
+<h5 id="次级参数"><a href="#次级参数" class="headerlink" title="次级参数"></a>次级参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-h</td>
+<td>帮助文件</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>输出到日志 - 无进展指示</td>
+</tr>
+<tr>
+<td>-qq</td>
+<td>不输出信息，错误除外</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>仅下载 - 不安装或解压归档文件</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>不实际安装。模拟执行命令</td>
+</tr>
+<tr>
+<td>-y</td>
+<td>在需要确认的场景中回应 yes</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>尝试修正系统依赖损坏处</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>如果归档无法定位，尝试继续</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>同时显示更新软件包的列表</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>获取源码包后编译</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示详细的版本号</td>
+</tr>
+<tr>
+<td>-c=?</td>
+<td>阅读此配置文件</td>
+</tr>
+<tr>
+<td>-o=?</td>
+<td>设置自定的配置选项，如 -o dir::cache=/tmp</td>
+</tr>
+</tbody></table>
+<h3 id="apt-命令"><a href="#apt-命令" class="headerlink" title="apt 命令"></a>apt 命令</h3><h3 id="aptitude-命令"><a href="#aptitude-命令" class="headerlink" title="aptitude 命令"></a>aptitude 命令</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/acool555/article/details/324107">学习笔记：apt-get与dselect原理_HexBug-CSDN博客_dselect</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Netfilter007/article/details/103879962">apt-get命令详解（超详细）_迎面暖风的博客-CSDN博客_apt-get命令</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/nzjdsds/article/details/76737401">apt-get build-dep命令详解_大方子-CSDN博客_build-dep</a></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a> 驱动</li>
+                <li>渝ICP备2021008011号</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
