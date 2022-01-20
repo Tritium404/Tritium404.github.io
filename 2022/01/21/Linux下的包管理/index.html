@@ -138,12 +138,12 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 ></h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://treaki.tk/wiki/uploads/Site/debian_banner.gif);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Linux 下的包管理</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Linux-下的包管理"><a href="#Linux-下的包管理" class="headerlink" title="Linux 下的包管理"></a>Linux 下的包管理</h1><h2 id="对于-Debian-系"><a href="#对于-Debian-系" class="headerlink" title="对于 Debian 系"></a>对于 Debian 系</h2><h3 id="dpkg-命令"><a href="#dpkg-命令" class="headerlink" title="dpkg 命令"></a>dpkg 命令</h3><p>由于 dpkg命令现在很少用，现在只列一个简表，更多命令可以通过 <code>dpkg --help</code> 查询。</p>
+                <h1 id="Linux-下的包管理"><a href="#Linux-下的包管理" class="headerlink" title="Linux 下的包管理"></a>Linux 下的包管理</h1><h2 id="对于-Debian-系"><a href="#对于-Debian-系" class="headerlink" title="对于 Debian 系"></a>对于 Debian 系</h2><h3 id="dpkg-命令"><a href="#dpkg-命令" class="headerlink" title="dpkg 命令"></a><code>dpkg</code> 命令</h3><p>由于 <code>dpkg</code> 命令现在很少用，现在只列一个简表，更多命令可以通过 <code>dpkg --help</code> 查询。</p>
 <table>
 <thead>
 <tr>
@@ -233,8 +233,68 @@
 </tr>
 </tbody></table>
 <h4 id="关于-dpkg-状态的修复"><a href="#关于-dpkg-状态的修复" class="headerlink" title="关于 dpkg 状态的修复"></a>关于 <code>dpkg</code> 状态的修复</h4><p>在执行各种包管理命令时，<code>dpkg</code> 存在一个状态文件，来记录软件是否被安装；版本号是多少；配置文件存在否，以及它在哪里等等。</p>
-<h3 id="apt-get-命令"><a href="#apt-get-命令" class="headerlink" title="apt-get 命令"></a>apt-get 命令</h3><p><code>apt-get</code> 命令更加简单易用，可以看作是基于 <code>dpkg</code> 命令的实现。</p>
-<table>
+<h3 id="apt-get-命令"><a href="#apt-get-命令" class="headerlink" title="apt-get 命令"></a><code>apt-get</code> 命令</h3><p><code>apt-get</code> 命令更加简单易用，可以看作是基于 <code>dpkg</code> 命令的实现。</p>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-h</td>
+<td>帮助文件</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>输出到日志 - 无进展指示</td>
+</tr>
+<tr>
+<td>-qq</td>
+<td>不输出信息，错误除外</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>仅下载 - 不安装或解压归档文件</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>不实际安装。模拟执行命令</td>
+</tr>
+<tr>
+<td>-y</td>
+<td>在需要确认的场景中回应 yes</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>尝试修正系统依赖损坏处</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>如果归档无法定位，尝试继续</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>同时显示更新软件包的列表</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>获取源码包后编译</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示详细的版本号</td>
+</tr>
+<tr>
+<td>-c=?</td>
+<td>阅读此配置文件</td>
+</tr>
+<tr>
+<td>-o=?</td>
+<td>设置自定的配置选项，如 -o dir::cache=/tmp</td>
+</tr>
+</tbody></table>
+<h5 id="次级参数"><a href="#次级参数" class="headerlink" title="次级参数"></a>次级参数</h5><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -318,15 +378,16 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>apt-mark hold packagename</td>
+<td><code>apt-mark hold packagename</code></td>
 <td>忽略某个包的更新</td>
 </tr>
 <tr>
-<td>apt-mark unhold packagename</td>
+<td><code>apt-mark unhold packagename</code></td>
 <td>取消忽略</td>
 </tr>
 </tbody></table>
-<h5 id="次级参数"><a href="#次级参数" class="headerlink" title="次级参数"></a>次级参数</h5><table>
+<h3 id="apt-命令"><a href="#apt-命令" class="headerlink" title="apt 命令"></a><code>apt</code> 命令</h3><p>apt 命令好像更为精简：</p>
+<table>
 <thead>
 <tr>
 <th>参数</th>
@@ -334,59 +395,263 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>list</td>
+<td>列出已安装的包的包名</td>
+</tr>
+<tr>
+<td>search</td>
+<td>在包描述中搜索</td>
+</tr>
+<tr>
+<td>show</td>
+<td>展示包细节</td>
+</tr>
+<tr>
+<td>install</td>
+<td>安装软件包</td>
+</tr>
+<tr>
+<td>reinstall</td>
+<td>重新安装软件包</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>移除包</td>
+</tr>
+<tr>
+<td>autoremove</td>
+<td>自动移除所有未使用的包</td>
+</tr>
+<tr>
+<td>update</td>
+<td>更新可用包列表</td>
+</tr>
+<tr>
+<td>upgrade</td>
+<td>通过安装，升级包来升级系统</td>
+</tr>
+<tr>
+<td>full-upgrade</td>
+<td>通过移除，安装，升级包来升级系统</td>
+</tr>
+<tr>
+<td>edit-sources</td>
+<td>编辑软件源</td>
+</tr>
+<tr>
+<td>satisfy</td>
+<td>安装依赖</td>
+</tr>
+</tbody></table>
+<h3 id="aptitude-命令"><a href="#aptitude-命令" class="headerlink" title="aptitude 命令"></a><code>aptitude</code> 命令</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>install</td>
+<td>安装/升级软件包</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>移除软件包</td>
+</tr>
+<tr>
+<td>purge</td>
+<td>移除包的同时移除它们的配置文件</td>
+</tr>
+<tr>
+<td>hold</td>
+<td>始终忽略某个包的升级</td>
+</tr>
+<tr>
+<td>keep</td>
+<td>本次会话中忽略升级</td>
+</tr>
+<tr>
+<td>forbid-version</td>
+<td>禁止升级到某一特定版本的软件包。</td>
+</tr>
+<tr>
+<td>unhold</td>
+<td>取消忽略</td>
+</tr>
+<tr>
+<td>markauto</td>
+<td>标记被自动安装的包</td>
+</tr>
+<tr>
+<td>unmarkauto</td>
+<td>标记被手动安装的包</td>
+</tr>
+<tr>
+<td>update</td>
+<td>下载最新的可用包列表</td>
+</tr>
+<tr>
+<td>safe-upgrade</td>
+<td>显示安全的更新</td>
+</tr>
+<tr>
+<td>full-upgrade</td>
+<td>显示可能需要移除/安装其他包的升级</td>
+</tr>
+<tr>
+<td>build-dep</td>
+<td>安装某个包的编译环境</td>
+</tr>
+<tr>
+<td>forget-new</td>
+<td>遗忘更新列表</td>
+</tr>
+<tr>
+<td>search</td>
+<td>检索包，允许更复杂的表达式</td>
+</tr>
+<tr>
+<td>show</td>
+<td>显示包的细节</td>
+</tr>
+<tr>
+<td>showsrc</td>
+<td>显示源码包的细节</td>
+</tr>
+<tr>
+<td>versions</td>
+<td>显示特定包的各种版本</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>擦除已下载的包文件</td>
+</tr>
+<tr>
+<td>autoclean</td>
+<td>删除已下载的旧版本的包文件</td>
+</tr>
+<tr>
+<td>changelog</td>
+<td>查看包的更新日志</td>
+</tr>
+<tr>
+<td>download</td>
+<td>下载包名对应的包文件</td>
+</tr>
+<tr>
+<td>reinstall</td>
+<td>重新安装当前版本的包</td>
+</tr>
+<tr>
+<td>why</td>
+<td>解释为什么会有额外的包应该被安装（解释依赖）</td>
+</tr>
+<tr>
+<td>why-not</td>
+<td>解释为什么会有额外的包不能被安装（解释冲突）</td>
+</tr>
+<tr>
+<td>add-user-tag</td>
+<td>为包或用户增加用户标签</td>
+</tr>
+<tr>
+<td>remove-user-tag</td>
+<td>移除用户标签</td>
+</tr>
+</tbody></table>
+<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
 <td>-h</td>
-<td>帮助文件</td>
+<td>显示帮助</td>
 </tr>
 <tr>
-<td>-q</td>
-<td>输出到日志 - 无进展指示</td>
-</tr>
-<tr>
-<td>-qq</td>
-<td>不输出信息，错误除外</td>
-</tr>
-<tr>
-<td>-d</td>
-<td>仅下载 - 不安装或解压归档文件</td>
+<td>–no-gui</td>
+<td>即使 GUI 可用，也不显示</td>
 </tr>
 <tr>
 <td>-s</td>
-<td>不实际安装。模拟执行命令</td>
+<td>模拟操作，但不执行</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>仅下载，不安装或移除任何东西</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>总是提示是否确认</td>
 </tr>
 <tr>
 <td>-y</td>
-<td>在需要确认的场景中回应 yes</td>
+<td>遇到是否的询问时，总是回答 yes</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>定制显示搜索结果的格式</td>
+</tr>
+<tr>
+<td>-O</td>
+<td>列出搜索结果分类规则</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>定制格式化显示搜索结果的宽度</td>
 </tr>
 <tr>
 <td>-f</td>
-<td>尝试修正系统依赖损坏处</td>
+<td>尝试激进的包损坏修复方式</td>
 </tr>
 <tr>
-<td>-m</td>
-<td>如果归档无法定位，尝试继续</td>
+<td>-V</td>
+<td>显示将要安装哪个版本的包</td>
 </tr>
 <tr>
-<td>-u</td>
-<td>同时显示更新软件包的列表</td>
+<td>-D</td>
+<td>显示自动变更的包的依赖关系</td>
 </tr>
 <tr>
-<td>-b</td>
-<td>获取源码包后编译</td>
+<td>-Z</td>
+<td>显示每个包的存储空间大小变动</td>
 </tr>
 <tr>
 <td>-v</td>
-<td>显示详细的版本号</td>
+<td>显示额外的信息</td>
 </tr>
 <tr>
-<td>-c=?</td>
-<td>阅读此配置文件</td>
+<td>-t [release]</td>
+<td>从即将要安装的包中设置候选版本</td>
 </tr>
 <tr>
-<td>-o=?</td>
-<td>设置自定的配置选项，如 -o dir::cache=/tmp</td>
+<td>-q</td>
+<td>在命令行模式中，抑制增加的进程</td>
+</tr>
+<tr>
+<td>-o key=val</td>
+<td>这里是示例：设置选项 key 为 val</td>
+</tr>
+<tr>
+<td>–with(out)-recommends</td>
+<td>指定是否推荐依赖</td>
+</tr>
+<tr>
+<td>-S fname</td>
+<td>从文件名中读取 <code>aptitude</code> 拓展状态信息</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>启动时下载新的包列表</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>启动时自动安装</td>
 </tr>
 </tbody></table>
-<h3 id="apt-命令"><a href="#apt-命令" class="headerlink" title="apt 命令"></a>apt 命令</h3><h3 id="aptitude-命令"><a href="#aptitude-命令" class="headerlink" title="aptitude 命令"></a>aptitude 命令</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/acool555/article/details/324107">学习笔记：apt-get与dselect原理_HexBug-CSDN博客_dselect</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/acool555/article/details/324107">学习笔记：apt-get与dselect原理_HexBug-CSDN博客_dselect</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Netfilter007/article/details/103879962">apt-get命令详解（超详细）_迎面暖风的博客-CSDN博客_apt-get命令</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/nzjdsds/article/details/76737401">apt-get build-dep命令详解_大方子-CSDN博客_build-dep</a></p>
 
